@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "swagger:gen": "node ./swagger.js",
+    "swagger:gen": "node ./api/swagger.js",
     "start": "npm run swagger:gen && node ./api/index.js",
     "dev": "npm run swagger:gen && nodemon ./api/index.js"
   },

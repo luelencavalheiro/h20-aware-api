@@ -5,7 +5,7 @@
     "description": "API documentation",
     "version": "1.0.0"
   },
-  "host": "localhost:3001",
+  "host": "h20-aware-api.vercel.app",
   "basePath": "/",
   "schemes": [
     "http"

@@ -46,9 +46,8 @@ const getClouds = async (lat, long, returnFormat = DEFAULT_RETURN_FORMAT,) => {
     const datePart = `${endDateFormatted}`;
     const evaporationPart = `/effective_cloud_cover:octas/`;
     const coordinatesPart = `${lat},${long}/`;
-    const formatPart = FORMAT.HTML;
 
-    const combinedParts = datePart + evaporationPart + coordinatesPart + formatPart;
+    const combinedParts = datePart + evaporationPart + coordinatesPart + returnFormat;
 
     const query = await mountQuery(combinedParts);
     const { data } = await mateomaticsApi.get(query);

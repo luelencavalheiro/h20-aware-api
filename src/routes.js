@@ -1,6 +1,6 @@
 const express = require('express');
 
-const { getPrecipitation, getEvaporation, getClouds } = require('./mateomatics.service');
+const { getPrecipitation, getEvaporation, getClouds, getHumidity } = require('./mateomatics.service');
 
 const routes = express();
 

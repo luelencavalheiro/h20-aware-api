@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./index.js"
+    "swagger:gen": "node swagger.js",
+    "dev": "npm run swagger:gen && nodemon ./index.js"
   },
   "keywords": [],
   "author": "",

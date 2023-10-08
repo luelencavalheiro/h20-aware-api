@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const routes = require('./src/routes');
 
@@ -9,5 +11,5 @@ app.use('/api', routes);
 const port = 3001;
 
 app.listen(port, () => {
-    console.log("🚀 API is running: http://localhost:3001/ 🚀");
+    console.log(`🚀 API is running on port: ${port} 🚀`);
 });

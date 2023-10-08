@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
-    "swagger:gen": "node ./api/swagger.js",
-    "start": "npm run swagger:gen && node ./api/index.js",
-    "dev": "npm run swagger:gen && nodemon ./api/index.js"
+    "swagger:gen": "node ./swagger.js",
+    "start": "npm run swagger:gen && node ./index.js",
+    "dev": "npm run swagger:gen && nodemon ./index.js"
   },
   "keywords": [],
   "author": "",

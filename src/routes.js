@@ -5,7 +5,8 @@ const { getPrecipitation, getEvaporation, getClouds, getHumidity } = require('./
 const routes = express();
 
 routes.get('/precipitation/lat/:lat/long/:long', async (req, res) => {
-    // #swagger.description = Gives a two-day forecast oaf the expected precipitation accumulation with five minute resolution. More information: https://www.meteomatics.com/en/api/available-parameters/weather-parameter/precipitation/
+    // #swagger.summary = Gives a two-day forecast oaf the expected precipitation accumulation with five minute resolution.
+    // #swagger.description = More information: https://www.meteomatics.com/en/api/available-parameters/weather-parameter/precipitation/
 
     const { lat, long } = req.params;
     const { format } = req.query;
@@ -16,7 +17,8 @@ routes.get('/precipitation/lat/:lat/long/:long', async (req, res) => {
 });
 
 routes.get('/evaporation/lat/:lat/long/:long', async (req, res) => {
-    // #swagger.description = Gives a two day evaporation forecast with a resolution of one hour. More information: https://www.meteomatics.com/en/api/available-parameters/weather-parameter/evaporation/
+    // #swagger.summary = Gives a two day evaporation forecast with a resolution of one hour.
+    // #swagger.description = More information: https://www.meteomatics.com/en/api/available-parameters/weather-parameter/evaporation/
 
     const { lat, long } = req.params;
     const { format } = req.query;
@@ -27,7 +29,8 @@ routes.get('/evaporation/lat/:lat/long/:long', async (req, res) => {
 });
 
 routes.get('/clouds/lat/:lat/long/:long', async (req, res) => {
-    // #swagger.description = Gives a two day evaporation forecast with a resolution of one hour. More information: https://www.meteomatics.com/en/api/available-parameters/weather-parameter/precipitation/
+    // #swagger.summary = Gives a two day evaporation forecast with a resolution of one hour.
+    // #swagger.description = More information: https://www.meteomatics.com/en/api/available-parameters/weather-parameter/precipitation/
 
     const { lat, long } = req.params;
     const { format } = req.query;
@@ -38,7 +41,8 @@ routes.get('/clouds/lat/:lat/long/:long', async (req, res) => {
 });
 
 routes.get('/humidity/lat/:lat/long/:long', async (req, res) => {
-    // #swagger.description = Gives a Create a time series of relative humidity in % at different altitudes. More information: https://www.meteomatics.com/en/api/available-parameters/weather-parameter/humidity/
+    // #swagger.summary = Gives a Create a time series of relative humidity in % at different altitudes.
+    // #swagger.description = More information: https://www.meteomatics.com/en/api/available-parameters/weather-parameter/humidity/
 
     const { lat, long } = req.params;
     const { format } = req.query;

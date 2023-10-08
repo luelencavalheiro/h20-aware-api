@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "swagger:gen": "node ./swagger.js",
-    "start": "npm run swagger:gen && node ./index.js",
-    "dev": "npm run swagger:gen && nodemon ./index.js"
+    "build": "node ./swagger.js",
+    "start": "npm run build && node ./index.js",
+    "dev": "npm run build && nodemon ./index.js"
   },
   "keywords": [],
   "author": "",

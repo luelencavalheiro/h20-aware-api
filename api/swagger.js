@@ -1,7 +1,11 @@
+require('dotenv').config();
+
 const swaggerAutogen = require('swagger-autogen')();
 
 const outputFile = './swagger-output.json';
-const endpointsFiles = ['./api/src/*.js'];
+const endpointsFiles = ['./src/*.js'];
+
+const host = `${process.env.VERCEL_URL}:${process.env.PORT}`;
 
 const doc = {
     info: {
@@ -9,7 +13,8 @@ const doc = {
         description: 'API documentation',
         version: '1.0.0',
     },
-    basePath: '/api',
+    host,
+    basePath: '/',
 };
 
 swaggerAutogen(outputFile, endpointsFiles, doc).then(() => {

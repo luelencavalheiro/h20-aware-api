@@ -21,6 +21,25 @@ const getPrecipitation = async (lat, long, returnFormat = DEFAULT_RETURN_FORMAT,
     return result;
 }
 
+const getEvaporation = async (lat, long, returnFormat = DEFAULT_RETURN_FORMAT, daysBehind = 2, evaporationInterval = 1) => {
+    const today = new Date();
+    const endDateFormatted = formatDate(today);
+
+    const datePart = `${endDateFormatted}`;
+    const evaporationPart = `P${daysBehind}D:PT${evaporationInterval}H/evaporation_${evaporationInterval}h:mm/`;
+    const coordinatesPart = `${lat},${long}/`;
+
+    const combinedParts = datePart + evaporationPart + coordinatesPart + returnFormat;
+
+    const query = await mountQuery(combinedParts);
+    const { data } = await mateomaticsApi.get(query);
+
+    const result = formatData(data, returnFormat, 'Evaporation');
+
+    return result;
+}
+
 module.exports = {
-    getPrecipitation
+    getPrecipitation,
+    getEvaporation,
 }

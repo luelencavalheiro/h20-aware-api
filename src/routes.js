@@ -29,7 +29,7 @@ routes.get('/evaporation/lat/:lat/long/:long', async (req, res) => {
 });
 
 routes.get('/clouds/lat/:lat/long/:long', async (req, res) => {
-    // #swagger.summary = Gives a two day evaporation forecast with a resolution of one hour.
+    // #swagger.summary = Gives the amount of cloud cover in octas for every grid point of the specified area.
     // #swagger.description = More information: https://www.meteomatics.com/en/api/available-parameters/weather-parameter/precipitation/
 
     const { lat, long } = req.params;
